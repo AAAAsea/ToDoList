@@ -1,0 +1,65 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #ffaa00,
+    ),
+  ),
+);
+
+
+:root[class="dark"]{
+  --font-color: rgb(215, 215, 215);
+  --bg-color: rgb(35, 35, 35);
+  --bg-transparant-color: rgba(35,35,35,0.3)
+  --primary-color: rgb(220, 54, 54);
+  --el-color-primary: #ffaa00;
+}
+:root[class="light"]{
+  --font-color: rgb(54, 54, 54);
+  --bg-color: rgb(255, 255, 255);
+  --bg-transparant-color: rgba(255, 255, 255,0.3)
+  --primary-color: rgb(220, 54, 54);
+}
+
+:root{
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+/*滚动条样式*/
+html::-webkit-scrollbar {
+  width: 6px;    
+  /*height: 4px;*/
+}
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  /* -webkit-box-shadow: inset 0 0 5px rgba(145, 145, 145, 0.2); */
+  background: rgba(147, 147, 147, 0.2);
+}
+.html::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 5px rgba(149, 149, 149, 0.2); */
+  border-radius: 0;
+  background: rgba(174, 174, 174, 0.1);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+// .animate__animated{
+//   --animate-duration: 1s;
+// }
+
+*{
+  -webkit-tap-highlight-color: transparent !important; // 去除移动端点击的蓝色背景色
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
