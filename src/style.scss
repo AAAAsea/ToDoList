@@ -13,12 +13,15 @@
   --bg-transparant-color: rgba(35,35,35,0.3)
   --primary-color: rgb(220, 54, 54);
   --el-color-primary: #ffaa00;
+  --shadow-color: rgba(200,200,200,0.1)
 }
 :root[class="light"]{
   --font-color: rgb(54, 54, 54);
   --bg-color: rgb(255, 255, 255);
   --bg-transparant-color: rgba(255, 255, 255,0.3)
   --primary-color: rgb(220, 54, 54);
+  --shadow-color: rgba(100,100,100,0.1)
+
 }
 
 :root{

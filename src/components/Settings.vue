@@ -16,6 +16,17 @@
           />
         </li>
         <li>
+          <span>阴影效果</span>
+          <el-switch
+            v-model="shadow"
+            inline-prompt
+            @change="changeShadow"
+            :active-value="true"
+            :inactive-value="false"
+            style="--el-switch-on-color: #ffaa00; --el-switch-off-color: #444444"
+          />
+        </li>
+        <li>
           <span>完成任务自动折叠</span>
           <el-switch
             v-model="autoFold"
@@ -68,6 +79,10 @@ function changeTheme(theme){
   document.documentElement.className = theme;
 }
 changeTheme(theme.value);
+
+// 阴影
+const shadow = ref(store.state.settings.shadow);
+const changeShadow = state=>{store.commit('updateSettings',{key: 'shadow', value: state})}
 
 // 折叠
 const autoFold = ref(store.state.settings.autoFold)

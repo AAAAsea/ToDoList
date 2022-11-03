@@ -44,13 +44,14 @@
       <div class="main-content">
         <TransitionGroup name="list-animation">
           <div
+            :class="{'day-card': store.state.settings.shadow}"
             v-for="day in month.child"
             :key="day.day"
             v-show="!day.delete && !(autoHide && collapse(day))"
             :id="month.month + '.' + day.day"
           >
             <h3
-              style="display: flex; align-items: center; cursor: pointer"
+              style="display: flex; align-items: center; cursor: pointer; padding-left: 15px;"
               @click="day.collapseFlag = !day.collapseFlag"
             >
               <span :class="{ today: isToday(month.month, day.day) }">
@@ -240,7 +241,7 @@ function submit() {
       insertItem({
         time: time.value,
         content: content.value,
-        id: res.id
+        id: res.id,
       });
       content.value = "";
     });
@@ -303,8 +304,7 @@ function deleteItem(month, day, item) {
 function insertItem(item) {
   let date = getMonthAndDate(item.time);
   item.delete = false;
-  if(!item.id)
-    item.id = new Date().toString();
+  if (!item.id) item.id = new Date().toString();
   item.state = 1; // 1表示未完成
   item.timeStr = date.time;
   let obj = {};
@@ -394,6 +394,13 @@ function jumpToToday() {
 </script>
 
 <style scoped lang="scss">
+.day-card {
+  &:hover {
+    box-shadow: 1px 1px 10px 5px var(--shadow-color);
+    border-radius: 10px;
+  }
+  transition: .3s;
+}
 .today-btn {
   width: 50px;
   height: 50px;
@@ -486,6 +493,7 @@ function jumpToToday() {
     display: grid;
     flex-wrap: wrap;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
   }
 }
 @media screen and (max-width: 600px) {

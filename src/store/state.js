@@ -8,7 +8,6 @@ export default {
     historyModelFlag: false,
     settingsModelFlag: false,
     modelWidth: '40%',
-    ...JSON.parse(localStorage.getItem('settings'))
   },
   user:{
     isLogin: false,
@@ -22,6 +21,7 @@ export default {
     autoFold: true,
     topSticky: true,
     autoHide: false,
+    shadow: true,
     ...JSON.parse(localStorage.getItem('settings'))
   },
 }

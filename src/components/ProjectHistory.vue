@@ -28,6 +28,12 @@ const store = useStore();
 
 const activities = [
   {
+    content: '增加hover样式',
+    timestamp: '2022-11-3 8:48',
+    size: 'large',
+    type: 'primary',
+  },
+  {
     content: '可以直接编辑todo，修复新增todo无法删除的bug',
     timestamp: '2022-10-09 15:44',
     size: 'large',
